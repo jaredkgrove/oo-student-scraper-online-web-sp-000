@@ -28,7 +28,11 @@ class Scraper
       :github=>social_links.detect{|link| link.include?("github")},
       :blog=>social_links.detect{|link| link.include?(".com") && !(link.include?("twitter") || link.include?("linkedin") || link.include?("github"))},
       :profile_quote=> profile_page.css("div.profile-quote").text,
+<<<<<<< HEAD
       :bio=> profile_page.css("div.bio-block.details-block").css("p").text
+=======
+      :bio=> profile_page.css("div.bio-block.details-block")
+>>>>>>> f92b25a168eab4c400c06bd632c9d0f92a14b670
     }
 
     profile_page.delete_if{|k,v| v.nil?}
